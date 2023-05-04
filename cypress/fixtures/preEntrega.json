@@ -1,0 +1,19 @@
+{
+    "usuario": {
+        "usuario": "pushingit",
+        "password": "123456!"
+    },
+    
+    "primerProducto": {
+        "nombre": "Black T-Shirt",
+        "precio": 15
+    },
+        
+    "segundoProducto": {
+        "nombre": "White Pants",
+        "precio": 20
+    },
+    "precioTotal": {
+        "precio": 35
+    }     
+}
