@@ -3,19 +3,19 @@ export class ShoppingCartPage {
         this.showTotalprice = '[class="chakra-button css-15tuzzq"]'
     };
 
-    returnName(producto){
+    getShoppingCartProduct(producto){
         return cy.get(`[name='${producto}']`);     
     };
 
-    returnPrice(precio) {
-        return cy.get(`[name='${precio}']`);
+    getShoppingCartPrecio(producto) {
+        return cy.get(`[name='${producto}']`);
     };
 
     clickShowTotalPrice() {
         cy.get(this.showTotalprice).click();
     };
-    returnPrecioTotal(precio) {
-        return cy.get(`[id='${precio}']`);
+    getShoppingCartPrecioTotal(producto) {
+        return cy.get(`[name='${producto}']`);
     };
 };
 

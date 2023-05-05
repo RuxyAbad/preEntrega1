@@ -29,11 +29,11 @@ describe('preEntrega-', () => {
       productsPage.agregarProducto(data.primerProducto.nombre);
       productsPage.agregarProducto(data.segundoProducto.nombre);
       cy.get(productsPage.goShoppingCartButton).click();
-      shoppingCartPage.returnName(data.primerProducto.nombre).should('have.text',data.primerProducto.nombre);
-      shoppingCartPage.returnPrice(data.primerProducto.precio).should('have.text','$' + data.primerProducto.precio);
-      shoppingCartPage.returnName(data.segundoProducto.nombre).should('have.text',data.segundoProducto.nombre);
-      shoppingCartPage.returnPrice(data.segundoProducto.precio).should('have.text', '$' + data.segundoProducto.precio);
+      shoppingCartPage.getShoppingCartProduct(data.primerProducto.nombre).should('have.text',data.primerProducto.nombre);
+      shoppingCartPage.getShoppingCartPrecio(data.primerProducto.precio).should('have.text','$' + data.primerProducto.precio);
+      shoppingCartPage.getShoppingCartProduct(data.segundoProducto.nombre).should('have.text',data.segundoProducto.nombre);
+      shoppingCartPage.getShoppingCartPrecio(data.segundoProducto.precio).should('have.text', '$' + data.segundoProducto.precio);
       shoppingCartPage.clickShowTotalPrice();
-      shoppingCartPage.returnPrecioTotal().should("have.text", `${data.primerProducto.price + data.segundoProducto.price}`);
+      shoppingCartPage.getShoppingCartPrecioTotal().should("have.text", `${data.primerProducto.price + data.segundoProducto.price}`);
     });
   });
