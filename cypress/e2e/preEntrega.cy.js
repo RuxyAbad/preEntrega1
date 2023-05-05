@@ -34,6 +34,6 @@ describe('preEntrega-', () => {
       shoppingCartPage.getShoppingCartProduct(data.segundoProducto.nombre).should('have.text',data.segundoProducto.nombre);
       shoppingCartPage.getShoppingCartPrecio(data.segundoProducto.precio).should('have.text', '$' + data.segundoProducto.precio);
       shoppingCartPage.clickShowTotalPrice();
-      shoppingCartPage.getShoppingCartPrecioTotal().should("have.text", `${data.primerProducto.price + data.segundoProducto.price}`);
+      shoppingCartPage.getShoppingCartPrecioTotal(data.precioTotal.precio).should("have.text", `${data.primerProducto.price + data.segundoProducto.price}`);
     });
   });
