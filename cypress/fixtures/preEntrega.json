@@ -13,7 +13,8 @@
         "nombre": "White Pants",
         "precio": 20
     },
+
     "precioTotal": {
         "precio": 35
-    }     
+    }
 }

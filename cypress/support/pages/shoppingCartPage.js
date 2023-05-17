@@ -1,22 +1,25 @@
 export class ShoppingCartPage {
     constructor(){
-        this.showTotalprice = '[class="chakra-button css-15tuzzq"]'
+        this.showTotalPriceButton = '[class="chakra-button css-15tuzzq"]'
+        this.precioTotal = '[id="price"]'
     };
 
     getShoppingCartProduct(producto){
         return cy.get(`[name='${producto}']`);     
     };
 
-    getShoppingCartPrecio(producto) {
-        return cy.get(`[name='${producto}']`);
+    getShoppingCartPrecio(producto){
+        return cy.get(`[name='${producto}']`)//following-sibling::p);
     };
 
-    clickShowTotalPrice() {
-        cy.get(this.showTotalprice).click();
+    clickShowTotalPrice(){
+        return cy.get(this.showTotalPriceButton).click();
     };
-    getShoppingCartPrecioTotal(producto) {
-        return cy.get(`[name='${producto}']`);
+
+    shoppingCartPrecioTotal(){
+        return cy.get(this.precioTotal);
     };
 };
+    
 
    

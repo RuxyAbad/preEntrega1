@@ -32,8 +32,8 @@ describe('preEntrega-', () => {
       shoppingCartPage.getShoppingCartProduct(data.primerProducto.nombre).should('have.text',data.primerProducto.nombre);
       shoppingCartPage.getShoppingCartPrecio(data.primerProducto.precio).should('have.text','$' + data.primerProducto.precio);
       shoppingCartPage.getShoppingCartProduct(data.segundoProducto.nombre).should('have.text',data.segundoProducto.nombre);
-      shoppingCartPage.getShoppingCartPrecio(data.segundoProducto.precio).should('have.text', '$' + data.segundoProducto.precio);
+      shoppingCartPage.getShoppingCartPrecio(data.segundoProducto.precio).should('have.text','$' + data.segundoProducto.precio);
       shoppingCartPage.clickShowTotalPrice();
-      shoppingCartPage.getShoppingCartPrecioTotal(data.precioTotal.precio).should("have.text", `${data.primerProducto.price + data.segundoProducto.price}`);
+      shoppingCartPage.shoppingCartPrecioTotal().should('have.test',`data.primerProducto.precio + data.segundoProducto.precio`);
     });
   });
