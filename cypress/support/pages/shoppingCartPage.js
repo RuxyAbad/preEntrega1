@@ -9,7 +9,7 @@ export class ShoppingCartPage {
     };
 
     getShoppingCartPrecio(producto){
-        return cy.get(`[name='${producto}']`)//following-sibling::p);
+        return cy.get(`[name='${producto}']`).siblings(`[id="productPrice"]`);
     };
 
     clickShowTotalPrice(){
