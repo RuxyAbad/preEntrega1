@@ -30,9 +30,9 @@ describe('preEntrega-', () => {
       productsPage.agregarProducto(data.segundoProducto.nombre);
       cy.get(productsPage.goShoppingCartButton).click();
       shoppingCartPage.getShoppingCartProduct(data.primerProducto.nombre).should('have.text',data.primerProducto.nombre);
-      shoppingCartPage.getShoppingCartPrecio(data.primerProducto.precio).should('have.text','$' + data.primerProducto.precio);
+      shoppingCartPage.getShoppingCartPrecio().should('have.text','$' + data.primerProducto.precio);
       shoppingCartPage.getShoppingCartProduct(data.segundoProducto.nombre).should('have.text',data.segundoProducto.nombre);
-      shoppingCartPage.getShoppingCartPrecio(data.segundoProducto.precio).should('have.text','$' + data.segundoProducto.precio);
+      shoppingCartPage.getShoppingCartPrecio().should('have.text','$' + data.segundoProducto.precio);
       shoppingCartPage.clickShowTotalPrice();
       shoppingCartPage.shoppingCartPrecioTotal().should('have.test',`data.primerProducto.precio + data.segundoProducto.precio`);
     });
